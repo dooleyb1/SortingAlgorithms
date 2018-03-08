@@ -1,12 +1,12 @@
 # SortingAlgorithms
 Java implementation of several sorting algorithms;
 
-+[Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
-+[Quick Sort](https://en.wikipedia.org/wiki/Quicksort)
-+[Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
-+[Shell Sort](https://en.wikipedia.org/wiki/Shellsort)
-+[Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
-+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
++ [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
++ [Quick Sort](https://en.wikipedia.org/wiki/Quicksort)
++ [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
++ [Shell Sort](https://en.wikipedia.org/wiki/Shellsort)
++ [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
++ [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
 
 ## Usage
 
