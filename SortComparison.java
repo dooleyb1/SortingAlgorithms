@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.List;
 
 // -------------------------------------------------------------------------
 
@@ -286,22 +287,22 @@ import java.util.Scanner;
     
     public static double[] populateArray(File file, int n) throws FileNotFoundException {
         
-        double[] result = new double[n];
+        double[] splitArray = new double[n];
         Scanner in = new Scanner(file);
         
-        for(int i=0; i<result.length; i++) {
-            result[i] = in.nextDouble();
+        for(int i=0; i<splitArray.length; i++) {
+            splitArray[i] = in.nextDouble();
         }
         
         //Uncomment for printing 
         /*
-        for (double d : result) {
+        for (double d : splitArray) {
             System.out.println(d); 
         }
         */
         
         in.close();
-        return result;
+        return splitArray;
     }
     
     /*
@@ -532,7 +533,71 @@ import java.util.Scanner;
     }
     
     public static void main(String[] args) throws FileNotFoundException {
-        
+    	
+    	String input = args[0];
+    	String sortingAlg = "";
+
+	    switch(input){
+	      case "-i": 
+	        sortingAlg = "insertion";
+	        break;
+	      case "-q":
+	        sortingAlg = "quick";
+	        break;
+	      case "-m":
+	        sortingAlg = "merge";
+	        break;
+	      case "-sh":
+	        sortingAlg = "shell";
+	        break;
+	      case "-se":
+	        sortingAlg = "selection";
+	        break;
+	      case "-b":
+	        sortingAlg = "bubble";
+	        break;
+	      default:
+	        System.out.println("Incorrect input...");
+	        break;
+	    }
+
+		StdOut.println("\nEnter an array of doubles seperated by commas (e.g 1.3, 283.3, 39.0) :");
+    	String arrayStr = StdIn.readLine();
+
+    	String[] splitArray = arrayStr.split(",\\s*");
+		double[] inputArray = new double[splitArray.length];
+
+    	for(int i=0; i<inputArray.length; i++){
+    		double x = Double.parseDouble(splitArray[i]);
+    		inputArray[i] = x;
+    	}
+
+    	//System.out.println("Input Array = " + Arrays.toString(inputArray));
+
+    	switch(sortingAlg){
+    		case "insertion":
+    			System.out.println("\nSorted Array (Insertion Sort):\n" + Arrays.toString(insertionSort(inputArray)));
+    			break;
+    		case "quick":
+    			System.out.println("\nSorted Array (Quick Sort):\n" + Arrays.toString(quickSort(inputArray)));
+    			break;
+    		case "merge":
+    			System.out.println("\nSorted Array (Merge Sort):\n" + Arrays.toString(mergeSort(inputArray)));
+    			break;
+    		case "shell":
+    			System.out.println("\nSorted Array (Shell Sort):\n" + Arrays.toString(shellSort(inputArray)));
+    			break;
+    		case "selection":
+    			System.out.println("\nSorted Array (Selection Sort):\n" + Arrays.toString(selectionSort(inputArray)));
+    			break;
+    		case "bubble":
+    			System.out.println("\nSorted Array (Bubble Sort):\n" + Arrays.toString(bubbleSort(inputArray)));
+    			break;
+    		default:
+	        	System.out.println("\nIncorrect input...");
+	        	break;
+
+    	}
     }
 
  }//end class

@@ -9,8 +9,23 @@ BUILD = junit-4.11.jar:.
 default:
 	$(JC) $(JFLAGS) $(BUILD) *.java
 
-run:
-	$(JVM) $(JFLAGS) $(TEST) SortComparison
+insertion:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -i
+
+quick:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -q
+
+merge:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -m
+
+shell:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -sh
+
+selection:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -se
+
+bubble:
+	@$(JVM) $(JFLAGS) $(TEST) SortComparison -b
 
 time:
 	$(JVM) $(JFLAGS) $(TEST) SortComparisonTest
